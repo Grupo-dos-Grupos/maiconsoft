@@ -1,0 +1,11 @@
+-- Create produtos table
+CREATE TABLE IF NOT EXISTS produtos (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  preco DECIMAL(10, 2) NOT NULL CHECK (preco >= 0),
+  descricao TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  deleted BOOLEAN DEFAULT FALSE
+);
+
